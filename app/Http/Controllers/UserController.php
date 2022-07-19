@@ -35,4 +35,20 @@ class UserController extends Controller
     public function edit(User $user) {
         return view('edituser', ['user' => $user]);
     }
+
+    public function editUser(User $user) {
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required'
+        ]);
+
+        $user->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'phone' => request('phone'),
+        ]);
+
+        return redirect('/');
+    }
 }
