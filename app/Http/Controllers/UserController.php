@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class UserController extends Controller
@@ -49,6 +50,11 @@ class UserController extends Controller
             'phone' => request('phone'),
         ]);
 
+        return redirect('/');
+    }
+
+    public function deleteUser($userID) {
+        DB::table('users')->where('id', '=', $userID)->delete();
         return redirect('/');
     }
 }
