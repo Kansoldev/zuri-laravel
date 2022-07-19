@@ -15,4 +15,20 @@ class UserController extends Controller
     public function create() {
         return view('adduser');
     }
+
+    public function createUser(Request $request) {
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required'
+        ]);
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->save();
+
+        return redirect('/');
+    }
 }
