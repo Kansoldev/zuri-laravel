@@ -19,3 +19,4 @@ Route::get('/create', [UserController::class, 'create']);
 Route::post('/create', [UserController::class, 'createUser']);
 Route::get('/user/{user}', [UserController::class, 'edit']);
 Route::put('/user/edit/{user}', [UserController::class, 'editUser']);
+Route::delete('/delete/user/{user}', [UserController::class, 'deleteUser']);
