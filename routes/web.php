@@ -15,3 +15,4 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [UserController::class, 'getUsers']);
+Route::get('/create', [UserController::class, 'create']);
