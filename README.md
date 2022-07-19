@@ -1,2 +1,3 @@
-Simple user management system built in laravel
-https://git.heroku.com/fast-headland-29833.git
+## Simple user management system built in laravel
+
+http://fast-headland-29833.herokuapp.com/
